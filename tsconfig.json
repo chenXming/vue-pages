@@ -28,7 +28,13 @@
     "sourceMap": true, //指定编译时是否生成.map文件
     "allowJs": false, // 指定是否允许编译JS文件，默认false,即不编译JS文件
     "resolveJsonModule": true,
-    "lib": ["dom", "esnext"],// 指定要包含在编译中的库文件
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "types": [
+      "vite/client"
+    ],// 指定要包含在编译中的库文件
     "incremental": true,
     "checkJs": false, //指定是否检查和报告JS文件中的错误，默认false
   },
