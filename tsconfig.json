@@ -1,0 +1,41 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": [ // 这里几乎包含所有的模块，你可以在这些模块里面使用types里面 declare声明的模块、变量。通过declare声明的类型或者变量或者模块，在include包含的文件范围内，都可以直接引用而不用去import
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/*.d.ts",
+    "mock/*.ts",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "moduleResolution": "Node",
+    "strict": false,
+    "jsx": "preserve",//jsx代码用于的开发环境:'preserve','react-native',or 'react
+    "importHelpers": true,
+    "experimentalDecorators": true,
+    "strictFunctionTypes": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true, //指定编译时是否生成.map文件
+    "allowJs": false, // 指定是否允许编译JS文件，默认false,即不编译JS文件
+    "resolveJsonModule": true,
+    "lib": ["dom", "esnext"],// 指定要包含在编译中的库文件
+    "incremental": true,
+    "checkJs": false, //指定是否检查和报告JS文件中的错误，默认false
+  },
+
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
+    }
+  ]
+}
